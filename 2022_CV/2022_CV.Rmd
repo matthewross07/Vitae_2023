@@ -1,0 +1,60 @@
+---
+name: Matthew Richard Voss
+surname: Ross
+position: > 
+            Assistant Professor, ESS 
+            
+            Faculty Director, Geospatial Centroid
+            
+address: "Ecosystem Science and Sustainability, Colorado State University"
+www: rossyndicate.com
+twitter: magicalsystems
+github: matthewross07
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::moderncv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tibble)
+library(tidyverse)
+```
+
+
+
+# Education
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "BA Ecology, French Minor", "2006-2010", "University of Colorado", "Boulder, CO",
+  "PhD Ecology", "2011-2017", "Duke University", "Durham, NC",
+  "Post-Doc Remote Sensing", "2017-2018", "University of North Carolina", "Chapel Hill, NC"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Nobel Prizes
+
+```{r}
+tribble(
+  ~Year, ~Type, ~Desc,
+  1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
+  1911, "Chemistry", "Awarded for the discovery of radium and polonium"
+) %>% 
+  brief_entries(
+    glue::glue("Nobel Prize in {Type}"),
+    Year, 
+    Desc
+  )
+```
+
+# Publications
+
+```{r}
+knitr::write_bib(c("vitae", "tibble"), "packages.bib")
+
+bibliography_entries("packages.bib") %>%
+  arrange(desc(author$family), issued)
+```
