@@ -19,6 +19,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 library(vitae)
 library(tibble)
 library(tidyverse)
+library(scholar)
 ```
 
 
@@ -55,6 +56,7 @@ tribble(
 ```{r}
 knitr::write_bib(c("vitae", "tibble"), "packages.bib")
 
-bibliography_entries("packages.bib") %>%
-  arrange(desc(author$family), issued)
+format_publications("FjuxZdYAAAAJ&hl", "Matt Ross") %>% 
+  print(quote = F)
+
 ```
