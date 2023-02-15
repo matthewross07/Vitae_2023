@@ -2,7 +2,7 @@
 name: Matthew Richard Voss
 surname: Ross
 position: > 
-            Assistant Professor, ESS 
+            Assistant Professor ESS; 
             
             Faculty Director, Geospatial Centroid
             
@@ -36,27 +36,178 @@ tribble(
   detailed_entries(Degree, Year, Institution, Where)
 ```
 
-# Nobel Prizes
 
-```{r}
-tribble(
-  ~Year, ~Type, ~Desc,
-  1903, "Physics", "Awarded for her work on radioactivity with Pierre Curie and Henri Becquerel",
-  1911, "Chemistry", "Awarded for the discovery of radium and polonium"
-) %>% 
-  brief_entries(
-    glue::glue("Nobel Prize in {Type}"),
-    Year, 
-    Desc
-  )
-```
+# Teaching 
+
+**WR 418 (3 credits, 2018-2022)- Land-use and Water Quality -** Course covers basic aqueous geochemistry,
+with an emphasis on analyzing data using R and open access datasets. Constructing
+open access book [here](https://matthewrvross.com/wr418/land-use-and-water-quality-wr418.html)
+
+**WR 419 (3 credits, 2018-2020) - Water Quality Analyses -** Course covers analytical tools for analyzing 
+water quality data with an emphasis on maintaining and curating a sensor network.
+
+**ESS 523a (3 credits, 2019-present) - Environmental Data Science Introduction -** Course covers environmental analysis
+in R, with an emphasis on geospatial analysis and visualization. 
+
+**ESS 523c (2 credits, 2022-present) - Environmental Data Science Applications - Water Resources - ** course covers detailed water resource analyses pipelines using R. 
+
+**WR 204 (3 credits, 2023-present) - Sustainable Watersheds** - Course covers
+introductory watershed and sustainability topics. Mostly delivering old material
+in 2023, but hopeful to redesign in Fall 2023. 
+
+**WR 440 (3 credits, 2022-present) - Watershed Problem Analysis** - Capstone course
+for Watershed students. 
+
+**Stat 158 A&B (1 credit, 2020) -**  Open access course for learning R [ Module 1](https://csu-r.github.io/Module1/), [Module 2](https://csu-r.github.io/Module2/)
+
+**Open access hydrology course modules** [Link](https://openecodatalab.github.io/Hydrology-Online/)
+
+**Shiny R Workshop** Course teaches students how to make shinyapps with all
+students successfully producing apps after one week course [Link](https://www.nrel.colostate.edu/ecoacademy/rshiny/)
+
+**Graduate Student Advisor of the Year** Ecosystem Science and Sustainability Department, 2019
+
+**Award for Creative, Innovative and Impactful Instruction** Warner College of
+Natural Resources, 2020
 
 # Publications
 
 ```{r}
-knitr::write_bib(c("vitae", "tibble"), "packages.bib")
-
-format_publications("FjuxZdYAAAAJ&hl", "Matt Ross") %>% 
-  print(quote = F)
+scholar::get_publications("FjuxZdYAAAAJ&hl") %>%
+  mutate(author = gsub('MRV Ross','*MRV Ross*',author)) %>%
+  detailed_entries(
+    what = title,
+    when = year,
+    with = author,
+    where = journal,
+    why = cites
+  ) %>% 
+  arrange(when)
 
 ```
+
+
+
+# Awarded Grants and Awards 
+
+## **2023**
+
+  - USGS Remote Sensing Branch, PI. *AquaSat 2.0 democratizing and improving remote sensing
+  of water quality for inland waters* ($199,900). 
+
+
+  - City of Fort Collins, PI. *Poudre River Monitoring Network and Decision System         
+    (long-term funding)* ($50,000 per year in long-term city budget)
+
+
+  - BHP Internet of Water, PI. *Visualizing and interpreting municipal water quality data* 
+    ($350,000)
+
+## **2022**
+
+NASA Water Resources, PI. *Real-time satellite and sensor fusion for predicting and understanding water quality threats to water supply networks of Northern Colorado* ($451,000)
+
+
+Northern Colorado Water Supplier Coalition, PI. *Cameron Peak Fire Water Quality impacts to Rivers and Reservoirs, towards a Decision Support System* ($86,000)
+
+City of Fort Collins, PI. *Poudre River Monitoring Network and Decision System (extension)*
+($12,000) 
+
+NASA Remote Sensing of Water Quality, PI. *Understanding and predicting algae blooms in networks of rivers and reservoirs* ($606,000)
+
+## **2021**
+
+
+USGS Integrated Information Dissemination Division, PI. *Process-Guided Deep Learning for Informing Selection of Monitoring Locations in Priority Watersheds* ($199,253)
+
+Colorado Water Center, PI. *High elevation fire controls on reservoir and river algae blooms* ($35,000)
+
+Northern Colorado Water Supplier Coalition, PI. *Cameron Peak Fire Water Quality impacts to Rivers and Reservoirs* ($85,000)
+
+
+## **2020**
+
+NSF Hydrological Sciences RAPID Award, CSU PI. *Collaborative Research: Increased access to infrastructure for distance education in hydrologic science* ($20,552)
+
+Colorado State University Provost Office, PI. *University-wide training in foundational data-analysis software* ($19,996)
+
+Colorado Water Institute, PI. *Linking the topology of forest disturbance to water quality to enhance forest and water resource management in Colorado* ($49,970)
+
+City of Fort Collins, PI. *Poudre River Monitoring Network and Decision System*
+($12,000) 
+
+## **2019**
+
+NSF DEB Macrosystems and NEON-Enabled Science, CO-PI. *Collaborative Research:
+MACRO-Sheds: Comparative Ecosystem Biogeochemistry at Continental Scales*
+(Total: \$997,000 with Duke University, CSU Portion after chief data scientist moves from Duke to CSU (in 2022): $620,864)
+
+USDA National Need Fellowship program, CO-PI. 
+*Re-visioning graduate training for the era of agricultural big data*. Support for 4 Master's and 1 PhD student to get ag or watershed data
+science degrees ($243,500)
+
+NSF EAR Hydrological Sciences Post-DOC awarded directly to Anna Bergstrom. 
+*Controls on weathering, solute fluxes, and geologic carbon cycling in 
+glacierized catchments* Faculty advisor ($174,000).
+
+Wyoming Water Research Program. Identifying, predicting and managing the occurrence of harmful cyanobacterial blooms in Wyoming reservoirs (CSU portion $25,200)
+
+
+## **2018**
+
+Partnership with the City of Fort Collins and In-Situ Sensor Manufacturing for 
+a real-time water quality monitoring and decision network in the Poudre River
+(Estimated in-kind contribution from the City and In-Situ: $85,000)
+
+Colorado Water Institute, PI. *Tools for improving knowledge of reservoir water quality in the Front Range of Colorado* ($49,991) 
+
+
+# Selected Presentations (2018-2023)
+
+## **2022**
+
+**MRV Ross** *From Dissonance to Harmony in big environmental datasets* Invited
+Speaker at University of Nevada, Reno
+
+**MRV Ross** *Remote sensing of water quality for management and science* Invited
+Speaker at University of Florida, Gaineseville
+
+A whole raft of student presentations that I am terrible at documenting. 
+
+
+## **2021**
+
+**MRV Ross** *Using Environmental Big Data to Understand, Manage, and Better Design Freshwater Ecosystems* Invited speaker to University of California Santa Barbara Bren School
+
+## **2020**
+
+**MRV Ross** *Matched-up, the importance of open-access training data for global-scale remote sensing of water quality* Invited speaker to the Workshop
+on Knowledge Guided Machine Learning at University of Minnesota. 2020
+
+**MRV Ross** *From printing press to pdfs, the limits of papers in scholarly communication and open science* Invited speaker to Virtual Summit on Incorporating Data Science and Open Science Techniques in Aquatic Research. 2020
+
+SN Topp^, TM Pavelsky, EH Stanley, X Yang, CG Griffin, **MRV Ross.** *Multi-Decadal Increases in U.S. Lake Water Clarity* Invited Talk at Ecological Society of America Virtual Conference. 2020. 
+
+
+## **2019**
+
+J Gardner, **MRV Ross**, SN Topp, X Yang, TM Pavelsky. *Trends and patterns in riverine suspended sediment concentrations across the continental USA revealed by satellite remote sensing.*
+
+X Yang, M Belanger, DK Byron, W Dolana, H Galit, S Januchowski-Hartley, M Jorrisen, T Langhorst, E Lawton, KA McQuillan, T Pavelsky, S Pawar, **MRV** Ross, A Whittemore. *Our fragmented rivers––mapping human-made river obstructions around the globe.*
+
+SN Topp^, TM Pavelsky, **MRV Ross.**, EH Stanley, X Yang. *Lakes as integrators: Multi-decadal fluctuations in regional lake water clarity and seasonality across the U.S.* 
+
+T Langhorst, TM Pavelsky, SN Topp, **MRV Ross**, C Dai, MT Durand, RPM Frasson, I Howat. *Remotely sensed discharge and sediment flux of the Sagavanirktok River.*
+
+## **2018**
+
+**MRV Ross**, SN Topp, AP Appling, X Yang, J Gardner, T Pavelsky.
+*What can 34 years of imagery tell us about suspended sediment
+dynamics and controls in large rivers?* Fall Meeting of the 
+American Geophysical Union, Washington DC, December 2018.
+
+**MRV Ross**. *The ecology of a designed ecosystem: legacies in the man-made mountains of Appalachia.* Invited speaker to 
+CU-Boulder Ecology Symposium, 2018. 
+
+**MRV Ross**. *Novel approaches to understanding spatial and temporal variation in water quality*. Invited speaker to CU-Boulder
+Civil and Environmental Engineering Symposium. 2018

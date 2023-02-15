@@ -1,0 +1,55 @@
+---
+name: Matthew Richard Voss
+surname: Ross
+position: > 
+            Assistant Professor, ESS 
+            
+            Faculty Director, Geospatial Centroid
+            
+address: "Ecosystem Science and Sustainability, Colorado State University"
+www: rossyndicate.com
+twitter: magicalsystems
+github: matthewross07
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::moderncv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tibble)
+library(tidyverse)
+library(scholar)
+```
+
+
+
+#
+
+```{r}
+table_of_fac <- tibble(faculty_name = c('matt','rich'),
+                       phd_year = c(2017,1996),
+                       scholar_id = c('FjuxZdYAAAAJ&hl','HKQacK0AAAAJ&hl'))
+
+
+
+get_fac_history <- function(fac = table_of_fac[1,]){
+  citation_history <- get_citation_history(fac$scholar_id)
+  profile <- get_profile(fac$scholar_id)
+  
+  cites_per_pub <- function(id = fac$scholar_id){
+      pubs <- get_publications(fac$scholar_id)
+      pub_data <- get_publication_data_extended(fac$scholar_id,pubs$pubid[3], flush = F)
+      
+      get_publication_date()
+}
+
+  
+  
+  compare_scholar_careers(table_of_fac$scholar_id) %>%
+    View(.)
+  
+  get_oldest_article(fac$scholar_id)
+  
+}
+```
