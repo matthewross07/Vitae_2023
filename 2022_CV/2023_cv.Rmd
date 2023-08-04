@@ -73,7 +73,7 @@ Natural Resources, 2020
 # Publications
 
 ```{r}
-scholar::get_publications("FjuxZdYAAAAJ&hl") 
+scholar::get_publications("FjuxZdYAAAAJ&hl") %>%
   mutate(author = gsub('MRV Ross','*MRV Ross*',author)) %>%
   detailed_entries(
     what = title,
@@ -82,7 +82,7 @@ scholar::get_publications("FjuxZdYAAAAJ&hl")
     where = journal,
     why = cites
   ) %>% 
-  arrange(when)
+  arrange(-when)
 
 ```
 
@@ -93,13 +93,12 @@ scholar::get_publications("FjuxZdYAAAAJ&hl")
 ## **2023**
 
 
-  - NPS, PI. *Climate Change Vulnerability Assessments for Water Supply to National Parks* ($1,609,000).
+  - National Park Service, PI. *Climate Change Vulnerability Assessments for Water Supply to National Parks* ($1,609,000).
   
-  - USGS Remote Sensing Branch, PI. *AquaSat 2.0 democratizing and improving remote sensing
-  of water quality for inland waters* ($199,900). 
+  - USGS Remote Sensing Branch, PI. *AquaSat 2.0 democratizing and improving remote sensing of water quality for inland waters* ($199,900). 
 
 
-  - City of Fort Collins, PI. *Poudre River Monitoring Network and Decision System         (long-term funding)* ($50,000 per year in long-term city budget)
+  - City of Fort Collins, PI. *Poudre River Monitoring Network and Decision System (long-term funding)* ($50,000 per year in long-term city budget)
 
 
   - BHP Internet of Water, PI. *Visualizing and interpreting municipal water quality data* 
@@ -107,67 +106,66 @@ scholar::get_publications("FjuxZdYAAAAJ&hl")
 
 ## **2022**
 
-NASA Water Resources, PI. *Real-time satellite and sensor fusion for predicting and understanding water quality threats to water supply networks of Northern Colorado* ($451,000)
+  - NASA Water Resources, PI. *Real-time satellite and sensor fusion for predicting and understanding water quality threats to water supply networks of Northern Colorado* ($451,000)
 
 
-Northern Colorado Water Supplier Coalition, PI. *Cameron Peak Fire Water Quality impacts to Rivers and Reservoirs, towards a Decision Support System* ($86,000)
+  -   Northern Colorado Water Supplier Coalition, PI. *Cameron Peak Fire Water Quality impacts to Rivers and Reservoirs, towards a Decision Support System* ($86,000)
 
 
-NASA Remote Sensing of Water Quality, PI. *Understanding and predicting algae blooms in networks of rivers and reservoirs* ($606,000)
+  -   NASA Remote Sensing of Water Quality, PI. *Understanding and predicting algae blooms in networks of rivers and reservoirs* ($606,000)
 
 ## **2021**
 
 
-USGS Integrated Information Dissemination Division, PI. *Process-Guided Deep Learning for Informing Selection of Monitoring Locations in Priority Watersheds* ($199,253)
+  -   USGS Integrated Information Dissemination Division, PI. *Process-Guided Deep Learning for Informing Selection of Monitoring Locations in Priority Watersheds* ($199,253)
 
-Colorado Water Center, PI. *High elevation fire controls on reservoir and river algae blooms* ($35,000)
+  -   Colorado Water Center, PI. *High elevation fire controls on reservoir and river algae blooms* ($35,000)
 
-Northern Colorado Water Supplier Coalition, PI. *Cameron Peak Fire Water Quality impacts to Rivers and Reservoirs* ($85,000)
+  -   Northern Colorado Water Supplier Coalition, PI. *Cameron Peak Fire Water Quality impacts to Rivers and Reservoirs* ($85,000)
 
 
 ## **2020**
 
-NSF Hydrological Sciences RAPID Award, CSU PI. *Collaborative Research: Increased access to infrastructure for distance education in hydrologic science* ($20,552)
+  -   NSF Hydrological Sciences RAPID Award, CSU PI. *Collaborative Research: Increased access to infrastructure for distance education in hydrologic science* ($20,552)
 
-Colorado State University Provost Office, PI. *University-wide training in foundational data-analysis software* ($19,996)
+  -   Colorado State University Provost Office, PI. *University-wide training in foundational data-analysis software* ($19,996)
 
-Colorado Water Institute, PI. *Linking the topology of forest disturbance to water quality to enhance forest and water resource management in Colorado* ($49,970)
+  -   Colorado Water Institute, PI. *Linking the topology of forest disturbance to water quality to enhance forest and water resource management in Colorado* ($49,970)
 
-City of Fort Collins, PI. *Poudre River Monitoring Network and Decision System*
-($12,000) 
+  -   City of Fort Collins, PI. *Poudre River Monitoring Network and Decision System* ($12,000) 
 
 ## **2019**
 
-NSF DEB Macrosystems and NEON-Enabled Science, CO-PI. *Collaborative Research:
-MACRO-Sheds: Comparative Ecosystem Biogeochemistry at Continental Scales*
-(Total: \$997,000 with Duke University, CSU Portion after chief data scientist moves from Duke to CSU (in 2022): $620,864)
+  -   NSF DEB Macrosystems and NEON-Enabled Science, CO-PI. *Collaborative Research: MACRO-Sheds: Comparative Ecosystem Biogeochemistry at Continental Scales*
+(Total: \$997,000 with Duke University, CSU Portion $420,864)
 
-USDA National Need Fellowship program, CO-PI. 
+  - USDA National Need Fellowship program, CO-PI. 
 *Re-visioning graduate training for the era of agricultural big data*. Support for 4 Master's and 1 PhD student to get ag or watershed data
 science degrees ($243,500)
 
-NSF EAR Hydrological Sciences Post-DOC awarded directly to Anna Bergstrom. 
+  -   NSF EAR Hydrological Sciences Post-DOC awarded directly to Anna Bergstrom. 
 *Controls on weathering, solute fluxes, and geologic carbon cycling in 
 glacierized catchments* Faculty advisor ($174,000).
 
-Wyoming Water Research Program. Identifying, predicting and managing the occurrence of harmful cyanobacterial blooms in Wyoming reservoirs (CSU portion $25,200)
+  -   Wyoming Water Research Program. Identifying, predicting and managing the occurrence of harmful cyanobacterial blooms in Wyoming reservoirs (CSU portion $25,200)
 
 
 ## **2018**
 
-Partnership with the City of Fort Collins and In-Situ Sensor Manufacturing for 
-a real-time water quality monitoring and decision network in the Poudre River
-(Estimated in-kind contribution from the City and In-Situ: $85,000)
+  -   Partnership with the City of Fort Collins and In-Situ Sensor Manufacturing fora real-time water quality monitoring and decision network in the Poudre River (Estimated in-kind contribution from the City and In-Situ: $85,000)
 
-Colorado Water Institute, PI. *Tools for improving knowledge of reservoir water quality in the Front Range of Colorado* ($49,991) 
+  - Colorado Water Institute, PI. *Tools for improving knowledge of reservoir water quality in the Front Range of Colorado* ($49,991) 
 
 
-# Selected First Author Presentations (2018-2023)
+# Selected Presentations (2018-2023)
 
 ## **2023**
 
-**MRV Ross** *Data science for decision making* Invited
+**MRV Ross** *Data science for water resource decision making* Invited
 Speaker at Boise State University
+
+**MRV Ross** *The future of hydrology education* Invited Speaker at CUAHSI Biennial
+
 
 ## **2022**
 
@@ -195,11 +193,11 @@ SN Topp^, TM Pavelsky, EH Stanley, X Yang, CG Griffin, **MRV Ross.** *Multi-Deca
 
 ## **2019**
 
-J Gardner, **MRV Ross**, SN Topp, X Yang, TM Pavelsky. *Trends and patterns in riverine suspended sediment concentrations across the continental USA revealed by satellite remote sensing.*
+J Gardner, **MRV Ross**, SN Topp, X Yang, TM Pavelsky. AGU Fall Meeting. *Trends and patterns in riverine suspended sediment concentrations across the continental USA revealed by satellite remote sensing.*
 
-X Yang, M Belanger, DK Byron, W Dolana, H Galit, S Januchowski-Hartley, M Jorrisen, T Langhorst, E Lawton, KA McQuillan, T Pavelsky, S Pawar, **MRV** Ross, A Whittemore. *Our fragmented rivers––mapping human-made river obstructions around the globe.*
+X Yang, M Belanger, DK Byron, W Dolana, H Galit, S Januchowski-Hartley, M Jorrisen, T Langhorst, E Lawton, KA McQuillan, T Pavelsky, S Pawar, **MRV** Ross, A Whittemore. AGU Fall Meeting. *Our fragmented rivers––mapping human-made river obstructions around the globe.*
 
-SN Topp^, TM Pavelsky, **MRV Ross.**, EH Stanley, X Yang. *Lakes as integrators: Multi-decadal fluctuations in regional lake water clarity and seasonality across the U.S.* 
+SN Topp^, TM Pavelsky, **MRV Ross.**, EH Stanley, X Yang. AGU Fall Meeting.  *Lakes as integrators: Multi-decadal fluctuations in regional lake water clarity and seasonality across the U.S.* 
 
 T Langhorst, TM Pavelsky, SN Topp, **MRV Ross**, C Dai, MT Durand, RPM Frasson, I Howat. *Remotely sensed discharge and sediment flux of the Sagavanirktok River.*
 

@@ -1,0 +1,165 @@
+---
+name: Matthew Richard Voss
+surname: Ross
+position: > 
+            Assistant Professor ESS; 
+            
+            Faculty Director, Geospatial Centroid
+            
+address: "Ecosystem Science and Sustainability, Colorado State University"
+www: rossyndicate.com
+twitter: magicalsystems
+github: matthewross07
+date: "`r format(Sys.time(), '%B %Y')`"
+output: vitae::moderncv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tibble)
+library(tidyverse)
+library(scholar)
+library(googlesheets4)
+library(lubridate)
+```
+
+
+
+# Education
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "BA Ecology, French Minor", "2006-2010", "University of Colorado", "Boulder, CO",
+  "PhD Ecology", "2011-2017", "Duke University", "Durham, NC",
+  "Post-Doc Remote Sensing", "2017-2018", "University of North Carolina", "Chapel Hill, NC"
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Teaching
+
+```{r, eval = F}
+teach <- read_sheet('https://docs.google.com/spreadsheets/d/1XWfiUsNNslmVhfh3cPlZC7F8lMGWpbsPZCMSgnX9VF4/edit#gid=764505479', sheet = 'Teaching')
+
+
+
+teach %>%
+  filter(!is.na(code)) %>%
+  mutate(test_title = paste0('\\href{',link,'}','{',title,'}')) %>%
+  detailed_entries(
+    what = test_title,
+    why = description,
+    when = sy,
+    with = code,
+    .protect = FALSE
+  ) 
+
+```
+
+
+# Teaching 
+
+**WR 418 (3 credits, 2018-2022)- Land-use and Water Quality -** Course covers basic aqueous geochemistry,
+with an emphasis on analyzing data using R and open access datasets. Constructing
+open access book [here](https://matthewrvross.com/wr418/land-use-and-water-quality-wr418.html)
+
+**WR 419 (3 credits, 2018-2020) - Water Quality Analyses -** Course covers analytical tools for analyzing 
+water quality data with an emphasis on maintaining and curating a sensor network.
+
+**ESS 523a (3 credits, 2019-present) - Environmental Data Science Introduction -** Course covers environmental analysis
+in R, with an emphasis on geospatial analysis and visualization. 
+
+**ESS 523c (2 credits, 2022-present) - Environmental Data Science Applications - Water Resources - ** course covers detailed water resource analyses pipelines using R. 
+
+**WR 204 (3 credits, 2023-present) - Sustainable Watersheds** - Course covers
+introductory watershed and sustainability topics. Mostly delivering old material
+in 2023, but hopeful to redesign in Fall 2023. 
+
+**WR 440 (3 credits, 2022-present) - Watershed Problem Analysis** - Capstone course
+for Watershed students. 
+
+**Stat 158 A&B (1 credit, 2020) -**  Open access course for learning R [ Module 1](https://csu-r.github.io/Module1/), [Module 2](https://csu-r.github.io/Module2/)
+
+**Open access hydrology course modules** [Link](https://openecodatalab.github.io/Hydrology-Online/)
+
+**Shiny R Workshop** Course teaches students how to make shinyapps with all
+students successfully producing apps after one week course [Link](https://www.nrel.colostate.edu/ecoacademy/rshiny/)
+
+**Graduate Student Advisor of the Year** Ecosystem Science and Sustainability Department, 2019
+
+**Award for Creative, Innovative and Impactful Instruction** Warner College of
+Natural Resources, 2020
+
+# Publications
+
+```{r}
+scholar::get_publications("FjuxZdYAAAAJ&hl") %>%
+  mutate(author = gsub('MRV Ross','*MRV Ross*',author)) %>%
+  detailed_entries(
+    what = title,
+    when = year,
+    with = author,
+    where = journal,
+    why = cites
+  ) %>% 
+  arrange(-when)
+
+```
+
+
+# Awards
+
+
+
+
+# Grants
+
+## Totals 2018 - `r year(Sys.time())`
+
+
+```{r}
+g <- read_sheet('https://docs.google.com/spreadsheets/d/1XWfiUsNNslmVhfh3cPlZC7F8lMGWpbsPZCMSgnX9VF4/edit#gid=764505479', sheet = 'Grants')
+
+
+total_dollars = paste0('$',format(sum(g$total), big.mark = ','))
+total_ross = paste0('$',format(sum(g$csu), big.mark = ','))
+
+
+
+```
+
+-   **Total Grants 2018 - `r year(Sys.time())` - `r total_dollars`**
+
+
+-   **Lab Portion 2018 - `r year(Sys.time())` = `r total_ross`**
+
+
+## Individual Grants
+
+
+```{r}
+
+g %>%
+  detailed_entries(
+    what = funder,
+    when = year,
+    with = role,
+    why = title,
+  ) %>%
+  arrange(-when)
+
+
+```
+
+
+
+# Selected Presentations (2018-2023)
+
+```{r}
+
+```
+
+
+
