@@ -9,7 +9,7 @@ position: >
 address: "Ecosystem Science and Sustainability, Colorado State University"
 www: rossyndicate.com
 twitter: magicalsystems
-github: matthewross07
+github: rossyndicate
 date: "`r format(Sys.time(), '%B %Y')`"
 output: vitae::moderncv
 ---
@@ -38,85 +38,83 @@ tribble(
   detailed_entries(Degree, Year, Institution, Where)
 ```
 
-# Teaching
+<!-- # Teaching -->
 
-```{r, eval = F}
-teach <- read_sheet('https://docs.google.com/spreadsheets/d/1XWfiUsNNslmVhfh3cPlZC7F8lMGWpbsPZCMSgnX9VF4/edit#gid=764505479', sheet = 'Teaching')
+<!-- ```{r, eval = F} -->
+<!-- teach <- read_sheet('https://docs.google.com/spreadsheets/d/1XWfiUsNNslmVhfh3cPlZC7F8lMGWpbsPZCMSgnX9VF4/edit#gid=764505479', sheet = 'Teaching') -->
 
 
 
-teach %>%
-  filter(!is.na(code)) %>%
-  mutate(test_title = paste0('\\href{',link,'}','{',title,'}')) %>%
-  detailed_entries(
-    what = test_title,
-    why = description,
-    when = sy,
-    with = code,
-    .protect = FALSE
-  ) 
+<!-- teach %>% -->
+<!--   filter(!is.na(code)) %>% -->
+<!--   mutate(test_title = paste0('\\href{',link,'}','{',title,'}')) %>% -->
+<!--   detailed_entries( -->
+<!--     what = test_title, -->
+<!--     why = description, -->
+<!--     when = sy, -->
+<!--     with = code, -->
+<!--     .protect = FALSE -->
+<!--   )  -->
 
-```
+<!-- ``` -->
 
 
 # Teaching 
 
-**WR 418 (3 credits, 2018-2022)- Land-use and Water Quality -** Course covers basic aqueous geochemistry,
-with an emphasis on analyzing data using R and open access datasets. Constructing
-open access book [here](https://matthewrvross.com/wr418/land-use-and-water-quality-wr418.html)
+**WR 418 (3 credits, 2018-2022)- Land-use and Water Quality ** Course covers basic aqueous geochemistry,
+with an emphasis on analyzing data using R and open access datasets.
 
-**WR 419 (3 credits, 2018-2020) - Water Quality Analyses -** Course covers analytical tools for analyzing 
+**WR 419 (3 credits, 2018-2020) - Water Quality Analyses ** Course covered analytical tools for analyzing 
 water quality data with an emphasis on maintaining and curating a sensor network.
 
-**ESS 523a (3 credits, 2019-present) - Environmental Data Science Introduction -** Course covers environmental analysis
+**ESS 523a (3 credits, 2019-present) - Environmental Data Science ** Course covers environmental analysis
 in R, with an emphasis on geospatial analysis and visualization. 
 
-**ESS 523c (2 credits, 2022-present) - Environmental Data Science Applications - Water Resources - ** course covers detailed water resource analyses pipelines using R. 
+**ESS 523c (2 credits, 2022-present) - Environmental Data Science   Water Resources  ** Course covers detailed water resource analyses pipelines using R. 
 
-**WR 204 (3 credits, 2023-present) - Sustainable Watersheds** - Course covers
-introductory watershed and sustainability topics. Mostly delivering old material
-in 2023, but hopeful to redesign in Fall 2023. 
+**WR 204 (3 credits, 2023-present) - Sustainable Watersheds**  Course covers
+introductory watershed and sustainability topics. 
 
-**WR 440 (3 credits, 2022-present) - Watershed Problem Analysis** - Capstone course
+**WR 440 (3 credits, 2022-present) - Watershed Problem Analysis**  Capstone course
 for Watershed students. 
 
-**Stat 158 A&B (1 credit, 2020) -**  Open access course for learning R [ Module 1](https://csu-r.github.io/Module1/), [Module 2](https://csu-r.github.io/Module2/)
+**Stat 158 A&B (1 credit, 2020)  **  Open access course for learning R [ Module 1](https://csu-r.github.io/Module1/), [Module 2](https://csu-r.github.io/Module2/)
 
-**Open access hydrology course modules** [Link](https://openecodatalab.github.io/Hydrology-Online/)
+**Open access hydrology course modules** [Materials](https://rossyndicate.github.io/Hydrology-Online/)
 
-**Shiny R Workshop** Course teaches students how to make shinyapps with all
-students successfully producing apps after one week course [Link](https://www.nrel.colostate.edu/ecoacademy/rshiny/)
+
+
+# Awards
 
 **Graduate Student Advisor of the Year** Ecosystem Science and Sustainability Department, 2019
 
 **Award for Creative, Innovative and Impactful Instruction** Warner College of
 Natural Resources, 2020
 
-# Publications
+**Outstanding Reviewer** American Geophysical Union, Global Biogeochemical Cycles, 2020
 
-```{r}
-scholar::get_publications("FjuxZdYAAAAJ&hl") %>%
-  mutate(author = gsub('MRV Ross','*MRV Ross*',author)) %>%
-  detailed_entries(
-    what = title,
-    when = year,
-    with = author,
-    where = journal,
-    why = cites
-  ) %>% 
-  arrange(-when)
+**Dean’s Award for Excellence to an Early Career Faculty Member** Warner College of Natural Resources,
+2022
 
-```
+# Major Service Contributions
 
+- Faculty Director Geospatial Centroid (2020-present) - Coordinate and lead 
+five full-time staff to deliver high quality geospatial
+analyses, trainings, and workshops for clients both on and off campus. 
 
-# Awards
+- Chair, Diversity Equity and Inclusion Committee for ESS Department (2022-present) 
 
+- Faculty adviser for 15 Water Resource track Professional Science Masters Students (2021-present)
 
+- Advised or Co-Advised 6 Research Masters Students, 3 PhD students
+
+- Committee Member on 34 PhDs or Research MS
 
 
-# Grants
 
-## Totals 2018 - `r year(Sys.time())`
+# Grants and Contracts 
+
+
 
 
 ```{r}
@@ -127,13 +125,12 @@ total_dollars = paste0('$',format(sum(g$total), big.mark = ','))
 total_ross = paste0('$',format(sum(g$csu), big.mark = ','))
 
 
-
 ```
 
 -   **Total Grants 2018 - `r year(Sys.time())` - `r total_dollars`**
 
 
--   **Lab Portion 2018 - `r year(Sys.time())` = `r total_ross`**
+-   **Portion to Lab 2018 - `r year(Sys.time())` - `r total_ross`**
 
 
 ## Individual Grants
@@ -147,7 +144,84 @@ g %>%
     when = year,
     with = role,
     why = title,
+    where = trimws(paste0('$',format((g$csu), big.mark = ',')))
   ) %>%
+  arrange(-when)
+
+
+```
+
+$\linebreak[4]$
+
+## Contracts to the Geospatial Centroid
+
+The Geospatial Centroid is a service and contracting center at Colorado State University.
+We specialize in geospatial analysis, undergraduate internship training, and
+broad cartography.
+In Winter of 2020, I transitioned into the role of Faculty Director of the Centroid. As a service
+center on campus, we operate primarily with funds from external and internal
+clients, below is a quick summary of our contract growth under my leadership. 
+
+$\linebreak[2]$
+
+- FY 21 - Total Contracts ~ $95,000
+- FY 22 - Total Contracts ~ $185,000
+- FY 23 - Total Contracts ~ $265,000
+- FY 24 (as of Aug 2023) ~ $355,000
+
+
+# Publications
+
+```{r}
+scholar::get_publications("FjuxZdYAAAAJ&hl") %>%
+  detailed_entries(
+    what = title,
+    when = year,
+    with = author,
+    where = journal,
+    why = cites
+  ) %>% 
+  arrange(-when)
+
+```
+
+
+
+# Press
+
+
+```{r}
+pr <- read_sheet('https://docs.google.com/spreadsheets/d/1XWfiUsNNslmVhfh3cPlZC7F8lMGWpbsPZCMSgnX9VF4/edit#gid=764505479', sheet = 'Press') %>%
+ mutate(link_title = paste0('\\href{',link,'}','{',title,'}'))
+
+
+
+
+pr %>%
+  detailed_entries(
+    what = link_title,
+    when = year,
+    where = publication,
+    .protect = F
+  ) %>% 
+  arrange(-when)
+
+
+```
+
+
+# Data and code downloads
+
+```{r}
+d <- read_sheet('https://docs.google.com/spreadsheets/d/1XWfiUsNNslmVhfh3cPlZC7F8lMGWpbsPZCMSgnX9VF4/edit#gid=764505479', sheet = 'data')  %>%
+ mutate(link_title = paste0('\\href{',link,'}','{',title,'}'))
+
+
+d %>%
+  detailed_entries(what = link_title,
+                   when = year,
+                   why = downloads,
+                   .protect = F) %>%
   arrange(-when)
 
 
@@ -155,9 +229,19 @@ g %>%
 
 
 
-# Selected Presentations (2018-2023)
+# Selected Presentations 
 
 ```{r}
+p <- read_sheet('https://docs.google.com/spreadsheets/d/1XWfiUsNNslmVhfh3cPlZC7F8lMGWpbsPZCMSgnX9VF4/edit#gid=764505479', sheet = 'Presentations') 
+
+
+
+p %>%
+  detailed_entries(what = title,
+                   where = where,
+                   when = year,
+                   with = authors) %>%
+  arrange(-when)
 
 ```
 
